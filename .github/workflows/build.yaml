@@ -1,0 +1,14 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Build esphome
+      uses: esphome/build-action@v4.0.2
+      with:
+        yaml-file: esptest.yaml
